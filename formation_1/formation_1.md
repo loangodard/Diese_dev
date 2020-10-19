@@ -142,6 +142,55 @@ console.log('🥤 : $'+prixSoda)
 >>'🥤 : $0.99'
 ```
 
+## Les fonctions
+On peut déclarer des fonctions de différentes manières en JavaScript.
+
+```javascript
+function carré(a){
+    return a * a
+}
+
+const carré = function (a){
+    return a * a
+};
+
+const carré = (a) => {
+    return a * a
+}
+```
+> À noter : on ne peut pas accéder à des variables définies dans une fonction en dehors de la fonction.
+
+```javascript
+// Les variables suivantes sont globales 
+var num1 = 20,
+    num2 = 3,
+    nom = "Licorne";
+
+// Cette fonction est définie dans la portée globale
+function multiplier() {
+  return num1 * num2;
+}
+
+multiplier(); // Renvoie 60
+
+// Un exemple de fonction imbriquée
+function getScore () {
+    var a = 12
+    var num1 = 2,
+    num2 = 3;
+  
+    function ajoute() {
+        return nom + " a marqué " + (num1 + num2);
+    }
+  
+    return ajoute();
+}
+
+getScore(); // Renvoie "Licorne a marqué 5"
+
+console.log(a) // ❌ Erreur : on ne pas avoir accès à une variable en dehors de la fonction où elle est déclaré.
+```
+
 ## Les objets
 
 On peut créer un objet simplement de la manière suivante :
