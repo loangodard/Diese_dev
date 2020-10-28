@@ -57,11 +57,11 @@ var age = 21 // On peut redéclarer une variable avec var
 
 /* ❌ Ne fonctionne pas ❌ */
 //Il faut declarer la variable avant de l'utiliser
-prenom = "Jack" 
+prenom = "Jack" //❌ 
 let prenom
 
 let age = 16 
-let age = 21 //On ne redeclare pas les variables avec let
+let age = 21 //❌ On ne redeclare pas les variables avec let
 ```
 
 ## Les conditions
@@ -217,3 +217,127 @@ console.log(menu)
     boisson:'Sprite'
 }
 ```
+
+Un objet peut aussi avoir des méthodes permettant de manipuler ses données.
+
+```javascript
+var menu = {
+    burger:'Bacon CheeseBurger',
+    accompagnement: 'Frites',
+    boisson:'Coca Vanille Cerise',
+    afficher_burger :function (){
+        console.log('Burger: '+this.burger)
+    },
+    modifier_burger : function(newBurger){
+      this.burger = newBurger
+      console.log('Burger modifié')
+    }
+}
+
+menu.afficher_burger()
+menu.modifier_burger('Big Mac')
+menu.afficher_burger()
+
+>>Burger: Bacon CheeseBurger
+>>Burger modifié
+>>Burger: Big Mac
+```
+
+On peut faire la concaténation de deux objets
+
+```javascript
+menu2={
+  burger:'Big Mac',
+  accompagnement:'Oignons rings',
+  boisson:'Sprite'
+}
+
+var concat = {...menu,...menu2}
+
+console.log(concat)
+>>{
+burger:"Big Mac",
+accompagnement:"Oignons rings",
+boisson:"Sprite",
+afficher_burger:f afficher_burger {...},
+modifier_burger:f modifier_burger {...}
+}
+```
+
+Cette méthode permet de concaténé les objets, s'ils ont des attributs en commun, seul celui du premier objet est gardé.
+
+```javascript
+const a = {
+    param1 : 1
+    param2 : 2
+}
+
+const b = {
+    param3 : 3,
+    param4: 4
+}
+
+console.log({...a,...b})
+>>{
+param1:1,
+param2:2,
+param3:3,
+param4:4
+}
+```
+
+## Les listes (Array)
+Déclaration d'une liste
+```javascript
+let L = [1,2,3]
+```
+
+Comme en Python, le première élément d'une liste est indexé par 0
+```Javascript
+console.log(L[0])
+>> 1
+
+console.log(L[L.length - 1]) //Dernier élément de la liste
+>> 3
+```
+
+Boucler sur une liste
+```javascript
+L.forEach((item,index) => {
+    console.log(index+":",item)
+})
+
+>> 0:1
+   1:2
+   2:3
+```
+
+**Méthode map**
+```javascript
+const noms = ['Arthur','Bernard','Michelle']
+
+const bonjourNoms = noms.map(elem => 'Bonjour '+elem)
+
+console.log(bonjourNoms)
+>> [
+"Bonjour Arthur",
+"Bonjour Bernard",
+"Bonjour Michelle"
+]
+
+const prix = [1,9.99,19.99]
+
+//On veut baisser tous les prix de 10%
+
+const solde = prix.map(prix => Number((prix-prix*0.1).toFixed(2))) // On arrondue au centième
+
+console.log(solde)
+>> [
+0.9,
+8.99,
+17.99
+]
+```
+
+Plein d'autres méthodes intéressantes ici :
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array
