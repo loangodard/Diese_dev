@@ -9,7 +9,7 @@ Cette première formation est dédiée à l'apprentissage du langage JavaScript.
 **Pourquoi apprendre Javascript ?** React Native est une bibliothèque JavaScript. C'est donc en JavaScript que nous développerons nos applications mobiles.
 
 > C'est un langage orienté objet.
-> 
+>
 > -- <cite>fr.wikipedia.org/wiki/JavaScript</cite>
 
 ## Pour commencer
@@ -109,8 +109,8 @@ console.log(j + h) // Ne fonctionne pas ❌
 ## Les conditions
 
 > JavaScript possède des opérateurs de comparaisons stricts et des opérateurs de comparaisons qui effectuent des conversions. Une comparaison strict (ex. : ===) ne sera vraie que si les deux opérandes sont du même type. La comparaison d'égalité faible (==) convertira les deux opérandes en un même type avant d'effectuer la comparaison. Pour les comparaisons relationnelles (ex. : <=), les opérandes sont tout d'abord converties en valeurs, puis en valeurs du même type, enfin la comparaison est effectuée.
-> 
-> 
+>
+>
 > <cite>https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Op%C3%A9rateurs_de_comparaison</cite>
 
 ### Égalité simple (==)
@@ -152,7 +152,7 @@ Attention à la manière dont Javascript s'occupe de convertir les types !
 ## If..else
 
 > L'instruction if exécute une instruction si une condition donnée est vraie ou équivalente à vrai. Si la condition n'est pas vérifiée, il est possible d'utiliser une autre instruction.
-> 
+>
 > <cite>https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/if...else</cite>
 
 ```javascript
@@ -223,7 +223,7 @@ const carré = (a) => {
 > À noter : on ne peut pas accéder à des variables définies dans une fonction en dehors de la fonction.
 
 ```javascript
-// Les variables suivantes sont globales 
+// Les variables suivantes sont globales
 var num1 = 20,
     num2 = 3,
     nom = "Licorne";
@@ -409,3 +409,31 @@ console.log(solde)
 
  Plein d'autres méthodes intéressantes ici :
 https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array
+
+La suite de ce document sera un petit tutoriel pour installer React Native sur votre ordinateur. Ce sera nécéssaire pour la prochaine séance :)
+
+Tout d'abord, nous allons installer Node.js et npm (Node Package Manager), car cela va nous permettre de tester notre application.
+
+Si vous êtes sur Ubuntu:
+
+lancez dans le terminal:
+` sudo apt-get update
+sudo apt-get install nodejs npm `
+
+Cela installera donc Node, on souhaite donc ensuite installer expo, qui est un package qui va nous permettre d'observer en temps réel notre application sur notre téléphone (vous devrez donc aussi installer expo sur votre téléphone via l'App Store ou le Play Store). Lancez dans le terminal:
+
+`npm install -g expo-cli`
+
+<!-- Si cela ne marche pas, vous pouvez regarder les autres méthodes d'installation sur: https://doc.ubuntu-fr.org/nodejs -->
+
+Si vous êtes sur Windows, vous pouvez trouver l'installeur de Node.js ici:
+
+https://nodejs.org/en/download/
+
+Cliquez sur la version de votre ordinateur. Dans l'installeur Windows, il y aura une option pour installer npm, donc faites attention à ne pas la décocher.
+
+Pour tester si votre installation marche, vous pouvez ouvrir un terminal en faisant Windows + R, et en écrivant cmd.
+Une fois le terminal ouvert, vous pouvez lancer:
+`node -v  et  npm -v`
+
+S'il n'y a pas d'erreurs, c'est tout bon ! :)
