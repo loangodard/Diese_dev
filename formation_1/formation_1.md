@@ -6,7 +6,7 @@ Cette première formation est dédiée à l'apprentissage du langage JavaScript.
 
 **Javascript, c'est quoi ?** JavaScript est au coeur du web. Normalement utilisé côté client, c'est un langage de programmation de script principalement employé dans les pages web interactives. Avec l'arrivé de Node.js, il est maintenant utilisé de plus en plus côté serveur, ce qui fait de lui un langage complet et essentiel pour le web.
 
-**Pourquoi apprendre Javascript ?** React Native est une bibliothèque JavaScript. C'est donc en JavaScript que nous développerons nos applications mobiles.
+**Pourquoi apprendre Javascript ?** React Native est un framework JavaScript. C'est donc en JavaScript que nous développerons nos applications mobiles.
 
 > C'est un langage orienté objet.
 >
@@ -25,6 +25,7 @@ Pour lancer un script JavaScript, on utilisera un navigateur classique - Firefox
 ```javascript
 // console.log("Ma chaîne de caractères")
 console.log('👋 Hello World!')
+>> '👋 Hello World!'
 ```
 
 Pour voir la console dans le navigateur, il faut ouvrir le panneau de développement, souvent en appuyant sur `F12`, puis en sélectionnant un onglet "Console" ou semblable.
@@ -33,7 +34,7 @@ Pour voir la console dans le navigateur, il faut ouvrir le panneau de développe
 
 > Le mot-clé <b>const</b> permet de déclarer une constante accessible uniquement en lecture.
 
-On ne peux pas modifier une constante ! 😅.
+On ne peux pas modifier une constante ! 😅
 
 ```javascript
 const a = 10
@@ -87,7 +88,7 @@ let age = 21 // ❌ On ne redéclare pas les variables avec let
 
 ```
 
-À l'origine, on n'avait que `var` pour déclarer une variable. Puis, la spécification **ES6** à introduit `let` et `const` pour gagner en finesse. Outre ce qui prècède, `let` et `const` n'existent que dans le bloc où ils sont définit, au contraire de `var` qui est global.
+À l'origine, on n'avait que `var` pour déclarer une variable. Puis, la spécification **ES6** a introduit `let` et `const` pour gagner en finesse. Outre ce qui prècède, `let` et `const` n'existent que dans le bloc où ils sont définit, au contraire de `var` qui est global.
 
 ```javascript
 var i = 3
@@ -410,6 +411,8 @@ console.log(solde)
  Plein d'autres méthodes intéressantes ici :
 https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array
 
+
+## Installation de NodeJs
 La suite de ce document sera un petit tutoriel pour installer React Native sur votre ordinateur. Ce sera nécéssaire pour la prochaine séance :)
 
 Tout d'abord, nous allons installer Node.js et npm (Node Package Manager), car cela va nous permettre de tester notre application.
