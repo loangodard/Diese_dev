@@ -413,13 +413,7 @@ Plein d'autres méthodes intéressantes sur les tableaux :
 
 La suite de ce document sera un petit tutoriel pour installer React Native sur votre ordinateur. Ce sera nécessaire pour la prochaine séance ! :smile:
 
-<<<<<<< HEAD
-
-## Installation de NodeJs
-La suite de ce document sera un petit tutoriel pour installer React Native sur votre ordinateur. Ce sera nécéssaire pour la prochaine séance :)
-=======
 ### Node (et npm)
->>>>>>> a2bee960bc2e07351d8d86d51c88134ee6e4165c
 
 Tout d'abord, nous allons installer Node.js et npm (Node Package Manager), car cela va nous permettre de tester notre application.
 
