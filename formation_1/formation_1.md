@@ -128,7 +128,6 @@ Attention à la manière dont Javascript s'occupe de convertir les types !
 ```javascript
 1 != 2;      ✅
 1 != "1";    ❌
-1 != '1';    ❌
 1 != true;   ❌
 ```
 
@@ -409,9 +408,52 @@ console.log(solde)
 Plein d'autres méthodes intéressantes sur les tableaux :
 [https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array]()
 
+### Les promesses (promise)
+
+>Une promesse est un objet (Promise) qui représente la complétion ou l'échec d'une opération asynchrone. La plupart du temps, on « consomme » des promesses et c'est donc ce que nous verrons dans la première partie de ce guide pour ensuite expliquer comment les créer.
+>
+>En résumé, une promesse est un objet qui est renvoyé et auquel on attache des callbacks plutôt que de passer des callbacks à une fonction. Ainsi, au lieu d'avoir une fonction qui prend deux callbacks en arguments 
+>
+>--<quote>https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Utiliser_les_promesses</quote>
+
+
+Un exemple pour illustrer :
+
+* On créer une fonction qui génére un nombre entre 1 et 1000 aléatoirement.
+* On créer une autre fonction qui appelle la fonction précédente jusqu'à ce que le nombre généré soit 500.
+* Lorsque le nombre généré est 500, on affiche succès.
+
+```javascript
+const random_in_a_b = (a, b) => {
+    return Math.floor(Math.random() * (b - a + 1) + a);
+}
+
+const generate_2 = () => {
+    return new Promise(callback => {
+        var result = random_in_a_b(1, 1000000)
+        while (result != 2) {
+            result = random_in_a_b(1, 1000000)
+        }
+        callback("succés")
+    })
+}
+
+const promise = generate_2().then(r => {
+    console.log(r)
+})
+
+const a = 2
+const b = 4
+
+console.log('a+b = '+ (a+b))
+
+>>'a+b = 6'
+>>'succés'
+```
+
 ## Node et Expo
 
-La suite de ce document sera un petit tutoriel pour installer React Native sur votre ordinateur. Ce sera nécessaire pour la prochaine séance ! :smile:
+La suite de ce document sera un petit tutoriel pour installer React Native sur votre ordinateur. Ce sera nécessaire pour la prochaine séance ! 🙂
 
 ### Node (et npm)
 
@@ -421,7 +463,7 @@ Tout d'abord, nous allons installer Node.js et npm (Node Package Manager), car c
 
 * npm est le principal gestionnaire de paquets pour Node.js : c'est lui qui s'occupe d'installer les dépendances d'un projet.
 
-#### Ubuntu
+## Ubuntu
 
 Lancez dans le terminal :
 
@@ -432,15 +474,24 @@ sudo apt-get install nodejs npm
 
 Cela installera Node et npm. On souhaite ensuite installer expo, qui est un package qui va nous permettre d'observer en temps réel notre application sur notre téléphone.
 
-```bash
-npm install -g expo-cli
+Enfin on installe Expo et React-Native qui sera utile au développement d'application mobile
+
+Expo
+```shell
+npm install --global expo-cli
+
 ```
 
-Cela va installer expo globalement sur votre ordinateur et le rendre accessible en ligne de commande.
+React-Native
+```shell
+npm install -g react-native-cli
+```
+
+Cela va installer expo et React-Native globalement sur votre ordinateur et le rendre accessible en ligne de commande.
 
 Pour fini, vous devez installer l'application expo sur votre téléphone via l'App Store ou le Play Store.
 
-#### Windows
+## Windows
 
 Vous pouvez trouver Node.js ici : https://nodejs.org/en/download/
 
@@ -453,4 +504,47 @@ node -v
 npm -v
 ```
 
-Ces deux commandes vont vous donner les versions de node et npm installés. S'il n'y a pas d'erreurs, c'est tout bon ! :smile:
+Ces deux commandes vont vous donner les versions de node et npm installés. S'il n'y a pas d'erreurs, c'est tout bon ! 🙂
+
+## MacOS
+
+Sur MacOs, vous devez dans un premier temps installer Xcode qui est disponible dans l'appStore.
+
+Ensuite installez homebrew en entrant cette commande dans le terminal
+```powershell
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+Une fois ceci fait, on installe Node grâce à HomeBrew depuis le terminal encore une fois
+```powershell
+brew install node
+```
+
+Pour voir si l'installation a bien fonctionné, vous pouvez regarder les versions de node et npm.
+```powershell
+node -v
+npm -v
+```
+
+Pour mettre à jour Node si besoin
+```powershell
+brew upgrade node
+```
+
+pour désinstaller Node :
+```shell
+brew uninstall node
+```
+
+Enfin on installe Expo et React-Native qui sera utile au développement d'application mobile
+
+Expo
+```shell
+npm install --global expo-cli
+
+```
+
+React-Native
+```shell
+npm install -g react-native-cli
+```
