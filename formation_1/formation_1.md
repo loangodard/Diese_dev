@@ -419,9 +419,58 @@ Plein d'autres méthodes intéressantes sur les tableaux :
 
 Un exemple pour illustrer :
 
-* On créer une fonction qui génére un nombre entre 1 et 1000 aléatoirement.
-* On créer une autre fonction qui appelle la fonction précédente jusqu'à ce que le nombre généré soit 500.
-* Lorsque le nombre généré est 500, on affiche succès.
+* Imagine toi enfant si ta mère t'avait promis de t'acheter un nouveau téléphone la semaine prochaine
+* Tu ne sais pas encore si maman allait t'acheter ce téléphone avant la semaine prochaine : elle peut te l'acheter si tu es sage mais elle peut ausse refuser si elle n'est pas contente...
+* C'est une promesse et en JavaScript, une promesse a 3 états :
+  * `pending` : Tu ne sais pas si tu vas avoir ce téléphone
+  * `FullFilled` : Maman est contente, elle vas t'acheter un nouveau téléphone
+  * `Rejected` : Maman n'est pas contente, elle ne t'achetera pas ce téléphone
+
+
+```javascript
+var isMomHappy = false;
+
+// Promise
+var willIGetNewPhone = new Promise(
+    function (resolve, reject) {
+        if (isMomHappy) {
+            var phone = {
+                brand: 'Samsung',
+                color: 'black'
+            };
+            resolve(phone); // fulfilled
+        } else {
+            var reason = new Error('mom is not happy');
+            reject(reason); // reject
+        }
+
+    }
+);
+```
+
+Maintenant, voyons comment appeller cette promesse.
+
+```javascript
+var askMom = function () {
+    willIGetNewPhone
+        .then(function (fulfilled) {
+            // yay, you got a new phone
+            console.log(fulfilled);
+             // output: { brand: 'Samsung', color: 'black' }
+        })
+        .catch(function (error) {
+            // oops, mom don't buy it
+            console.log(error.message);
+             // output: 'mom is not happy'
+        });
+};
+
+askMom();
+```
+
+Exemple tiré de https://www.digitalocean.com/community/tutorials/javascript-promises-for-dummies
+
+Ci dessous un autre example montrant l'interet des Promesses.
 
 ```javascript
 const random_in_a_b = (a, b) => {
