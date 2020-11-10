@@ -86,7 +86,11 @@ et on va choisir le template `blank`. Expo place le dossier `bac-a-sable` avec t
 
 ### Lancer l'application
 
-Allons dans notre dossier `bac-a-sable` avec la ligne de commande, puis lançons la commande :
+Allons dans notre dossier `bac-a-sable` avec la ligne de commande
+```bash
+cd bac-a-sable
+```
+puis lançons la commande :
 
 ```bash
 npm start
@@ -125,5 +129,8 @@ React fait de la programmation par composants.
 #### JSX
 
 C'est comme du HTML, mais ce n'est pas du HTML ! Pas de HTML en React Native.
+Pour avoir une belle coloration du text par l'éditeur de texte, je recommande d'installer Babel sur Visual Studio code.
+
+https://marketplace.visualstudio.com/items?itemName=mgmcdermott.vscode-language-babel
 
 #### Un peu de style
