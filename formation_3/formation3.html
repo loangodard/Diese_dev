@@ -2,7 +2,7 @@
     <html>
     <head>
         <meta charset="UTF-8">
-        <title>Objectifs de la s&eacute;ance</title>
+        <title>Petit point sur la P&period;O&period;O &lpar;Programmation Orient&eacute;e Objet&rpar;</title>
         <style>
 </style>
         
@@ -23,8 +23,7 @@
         
     </head>
     <body class="vscode-body vscode-light">
-        <h1 id="objectifs-de-la-séance">Objectifs de la séance</h1>
-<h1 id="petit-point-sur-la-poo-programmation-orientée-objet">Petit point sur la P.O.O (Programmation Orientée Objet)</h1>
+        <h1 id="petit-point-sur-la-poo-programmation-orientée-objet">Petit point sur la P.O.O (Programmation Orientée Objet)</h1>
 <p>Avant de reprendre le code, je veux faire un petit point théorie et vous parler d'une des branches de la programmation, la programmation objet.
 C'est un paradigme utilisé par beaucoup de langages, dont ceux les plus connus et les plus répandus dans le monde (Java, C++, React...). Cependant, je ne suis pas sûr
 que tout le monde sait ce que ça veut dire. La preuve, moi non plus je ne sais pas ce que ça veut dire... On va aller chercher la définition !</p>
@@ -40,10 +39,42 @@ dans lequel on va se dire: &quot;Okay, dans mon code, je vais me servir d'un tru
 <h1 id="des-composants-aka-components">Des composants (a.k.a components)</h1>
 <h2 id="view">View</h2>
 <p>Une vue (ou <em>View</em>) peut être vue comme une sorte de boîte, dans laquelle on va placer tous nos petits objets. Une vue s'ouvre avec la balise <code>&lt;View&gt;</code> et se ferme avec la balise <code>&lt;/View&gt;</code>. Cela veut dire que tout ce qui se trouve entre ces deux balises appartient à la vue. De cette hierarchie, on peut définir le concept d'élément parent et d'élément enfant. L'élément parent (par exemple: une vue) contient des éléments enfants (par exemple: un texte, une image, un objet qu'on a créé nous-même 🙂 )</p>
+<p>**/!**: Dans notre <em>App.js</em>, dans la fonction return de la fonction App, il faut toujours TOUJOURS avoir un élément parent dans lequel on va placer nos éléments. Sinon ça va pas compiler et ça va faire une erreur. Pourquoi ? Parce qu'en plaçant nos éléments dans une vue, ça leur explique comment se positionner les uns par rapport aux autres.</p>
+<p><a href="https://reactnative.dev/docs/view">Doc de la View</a></p>
 <h2 id="text">Text</h2>
+<p>Le composant <em>Text</em> va nous servir... à écrire du texte. Comment ça marche ? Et bien, ce composant a une balise ouvrante <code>&lt;Text&gt;</code> et une balise fermante <code>&lt;/Text&gt;</code>, et le texte qu'on va afficher sera tout le texte compris entre ces deux balises.</p>
+<p>Par exemple:</p>
+<pre><code><code><div>&lt;Text&gt; Joli bébé ma douceuh &lt;/Text&gt;
+</div></code></code></pre>
+<p>Cette ligne de code affiche donc le texte &quot;Joli bébé ma douceuh&quot; sur notre application.
+Cependant, il y a plein de propriétés qu'un texte peut avoir, et qu'on ne va pas explorer maintenant. Cependant, pour votre curiosité, vous pouvez toujours allez sur le lien ci-dessous pour voir la doc du composant <em>Text</em>.</p>
+<p><a href="https://reactnative.dev/docs/text">Doc du Text</a></p>
 <h2 id="textinput">TextInput</h2>
-<h2 id=""></h2>
+<p>Le composant <em>TextInput</em> va faire une petite barre dans laquelle, lorsque l'on va appuyer dessus, notre clavier va s'ouvrir et on va pouvoir rentrer du texte dedans. L'objectif étant notamment d'envoyer des informations à l'application, ou indirectement à une base de données, commme une barre de recherche lambda et avoir des résultats.</p>
+<p>Le TextInput est le premier composant que vous voyez, il me semble, qui ne possède pas de balise fermante. Le composant est formé d'une seul balise qui se ferme toute seule. Et comme toutes les balises du genre, elle se rédige ainsi: <code>&lt;TextInput /&gt;</code>. Mais dans ce cas-là, comment fait-on pour personnaliser notre composant <em>TextInput</em> ? Et bien, toutes les informations d'un <em>TextInput</em> seront passées par ses <strong>props</strong>, c'est-à-dire ses propriétés. Ce sont les arguments présents dans la balise, vous l'avez déjà vu pour les <em>View</em> notamment.</p>
+<p>Exemple:</p>
+<pre><code><code><div>&lt;Composant prop1 = {} prop2 ={} ... /&gt;
+</div></code></code></pre>
+<p>Donc, pour récupérer le texte d'un <em>TextInput</em>, comment fait-on ? On va utiliser la magnifique propriété <em>onChangeText</em> ! (vous remarquerez que les composants commencent avec une majuscule, tandis que les propriétés commencent avec une miniscule). Dans la propriété <em>onChangeText</em>, on peut spécifier une fonction à notre <em>TextInput</em> pour lui dire : quand le texte rentré dans l'input change, tu éxecutes cette fonction avec le nouveau texte. Donc dans cette fonction, on fait ce qu'on veut avec notre nouveau texte. 🙂</p>
+<p><a href="https://reactnative.dev/docs/textinput">Doc du TextInput</a></p>
+<h2 id="flatlist">FlatList</h2>
+<p>Comme son nom l'indique, ce composant va nous servir à faire des listes ! On va essayer d'en faire une en suivant la documentation.</p>
+<p><a href="https://reactnative.dev/docs/flatlist">Doc de la FlatList</a></p>
 <h1 id="comment-créer-vos-propres-composants-">Comment créer vos propres composants ?</h1>
+<p>Il y a deux manières pour créer ses composants en React. Soit en faisant des classes, et dans ce cas-là, notre programmation ressemblera un peu plus à de la programmation objet. Soit en faisant des <strong>composants fonctionnels</strong>, c'est-à-dire des composants déclarés avec des fonctions. C'est ce qu'on a fait depuis le début, et pour faire plaisir à Loan, on va continuer comme ça !</p>
+<pre><code><code><div>import React from 'react';
+import {View, Text} from 'react-native';
+
+function Composant (props) { //on peut passer des propriétés à notre composant, c'est super utile
+    return(
+        &lt;View&gt;
+            &lt;Text&gt; Je suis le composant Composant ! &lt;/Text&gt;
+        &lt;/View&gt;
+    )
+}
+
+export default Composant; //ne jamais oublier d'export notre composant, pour que les autres parties de notre code puisse se servir de ce composant, en l'important.
+</div></code></code></pre>
 
     </body>
     </html>
