@@ -1,3 +1,5 @@
+# Formation numéro 3
+
 # Petit point sur la P.O.O (Programmation Orientée Objet)
 
 Avant de reprendre le code, je veux faire un petit point théorie et vous parler d'une des branches de la programmation, la programmation objet. 
