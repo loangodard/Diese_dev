@@ -17,7 +17,7 @@
 		"tweet" : "Les Jordans 11 sont bien plus belle que les LeBron 11 et encore plus que les Yeezys",
 		"image" : "https://pbs.twimg.com/ad_img/1326622263379046400/dRy1Zzf9?format=jpg&name=900x900",
 		"likes" : 100,
-		"RT" : 50,
+		"RT" : 50
 	},
 	{
 		"id":3,
@@ -27,7 +27,7 @@
 		"tweet" : "Kanye 2024",
 		"image" : "https://pbs.twimg.com/media/El98y8cVgAExRSk?format=jpg&name=large",
 		"likes" : 0,
-		"RT" : 0,
+		"RT" : 0
 	},
 	{
 		"id":4,
@@ -37,6 +37,6 @@
 		"tweet" : "Starship SN8 with rear body flaps",
 		"image" : "https://pbs.twimg.com/media/Ei279UbUYAAHzlj?format=jpg&name=large",
 		"likes" : 10000,
-		"RT" : 10000,
+		"RT" : 10000
 	}
 ]
