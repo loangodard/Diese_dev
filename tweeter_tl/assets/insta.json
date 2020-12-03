@@ -1,30 +1,17 @@
 [
 	{
-		"id":1,
-		"user":"LeBron James",
-		"at" : "KingJames",
-		"profilPic" : "https://pbs.twimg.com/profile_images/1010862750401253377/Rof4XuYC_400x400.jpg",
-		"tweet" : "Je suis bien plus fort que MJ",
-		"image" : "",
-		"likes" : 100,
-		"RT" : 50
-	},
-	{
 		"id":2,
 		"user":"Jordan",
-		"at" : "Jumpman23",
 		"profilPic" : "https://pbs.twimg.com/profile_images/956325201054113792/MLcVGcjo_400x400.jpg",
-		"tweet" : "Les Jordans 11 sont bien plus belle que les LeBron 11 et encore plus que les Yeezys",
+		"post" : "Les Jordans 11 sont bien plus belle que les LeBron 11 et encore plus que les Yeezys",
 		"image" : "https://pbs.twimg.com/ad_img/1326622263379046400/dRy1Zzf9?format=jpg&name=900x900",
 		"likes" : 100,
-		"RT" : 50
 	},
 	{
 		"id":3,
 		"user":"ye",
-		"at" : "kanyewest",
 		"profilPic" : "https://pbs.twimg.com/profile_images/1276461929934942210/cqNhNk6v_400x400.jpg",
-		"tweet" : "Kanye 2024",
+		"post" : "Kanye 2024",
 		"image" : "https://pbs.twimg.com/media/El98y8cVgAExRSk?format=jpg&name=large",
 		"likes" : 0,
 		"RT" : 0
@@ -32,11 +19,9 @@
 	{
 		"id":4,
 		"user":"Elon Musk",
-		"at" : "elonmusk",
 		"profilPic" : "https://pbs.twimg.com/profile_images/1295975423654977537/dHw9JcrK_400x400.jpg",
-		"tweet" : "Starship SN8 with rear body flaps",
+		"post" : "Starship SN8 with rear body flaps",
 		"image" : "https://pbs.twimg.com/media/Ei279UbUYAAHzlj?format=jpg&name=large",
 		"likes" : 10000,
-		"RT" : 10000
 	}
 ]
